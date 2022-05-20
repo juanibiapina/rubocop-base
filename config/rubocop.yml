@@ -1,3 +1,4 @@
 AllCops:
+  NewCops: enable # accept all new cops by default
   Exclude:
     - vendor/**/* # do not check vendored code

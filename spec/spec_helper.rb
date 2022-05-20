@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require "rubocop/sensible"
+require "rubocop/base"
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure

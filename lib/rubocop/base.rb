@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-require_relative "sensible/version"
+require_relative "base/version"
 
 module Rubocop
-  module Sensible
+  module Base
     class Error < StandardError; end
     # Your code goes here...
   end

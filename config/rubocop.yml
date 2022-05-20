@@ -2,3 +2,56 @@ AllCops:
   NewCops: enable # accept all new cops by default
   Exclude:
     - vendor/**/* # do not check vendored code
+
+# Merge `Exclude` configuration when overriding them in projects
+inherit_mode:
+  merge:
+    - Exclude
+
+# This is a normal rspec pattern, so we disable it for spec directory
+# https://github.com/bbatsov/rubocop/issues/4222
+Lint/AmbiguousBlockAssociation:
+  Exclude:
+    - 'spec/**/*'
+
+# Makes it easier to move lines around with vim and generates better git diffs
+Style/TrailingCommaInHashLiteral:
+  Enabled: true
+  EnforcedStyleForMultiline: consistent_comma
+
+# A choice of available syntax
+Style/WordArray:
+  Enabled: false
+
+# A choice of available syntax
+Style/SymbolArray:
+  Enabled: false
+
+# Try to keep consistency withing the chosen style, assuming the two types of
+# syntax have different purposes
+Style/HashSyntax:
+  Enabled: true
+  EnforcedStyle: ruby19_no_mixed_keys
+
+# Modifiers at the end of the line feels like thinking in reverse to me
+Style/IfUnlessModifier:
+  Enabled: false
+
+# Prefer self documenting code
+Style/Documentation:
+  Enabled: false
+
+# Semantics is much more important in naming
+Naming/AccessorMethodName:
+  Enabled: false
+Naming/MethodParameterName:
+  Enabled: true
+  MinNameLength: 1
+
+# I'll use it if the int is representing a real life number
+Style/NumericLiterals:
+  Enabled: false
+
+# Disable all metrics
+Metrics:
+  Enabled: false

@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require_relative "base/version"
+require_relative 'base/version'
 
 module Rubocop
   module Base
